@@ -1,0 +1,14 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui">
+  <ribbon>
+    <tabs>
+      <tab id="CustomTab" label="TOPO">
+        <group id="Group_CreationTopo" label="Création Topo">
+          <button id="Button_CreationTopo" label="Création Topo" size="large" onAction="AjouterBlocsPersonnalises" image="TOPO" />
+        </group>
+        <group id="Group_CreationLegende" label="Création Légende">
+          <button id="Button_CreationLegende" label="Création Légende" size="large" onAction="Legende" image="legende" />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
