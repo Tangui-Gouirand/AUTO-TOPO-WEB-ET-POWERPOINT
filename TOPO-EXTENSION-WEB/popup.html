@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Extract</title>
+        <link rel="stylesheet" href="popup.css">
+        <link href="https://cdn.jsdelivr.net/npm/boosted@5.3.5/dist/css/boosted.min.css" rel="stylesheet">
+        <link href="https://boosted.orange.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-group">
+                <label for="id">Nom du réseau :</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="id" name="id" placeholder="Entrez l'ID ici">
+                </div>
+            </div>
+            <div class="d-grid gap-2">
+                <button id="ouvrir" class="btn btn-primary noncliquable">Ouvrir Tableau </button>
+                <div id="loading-message" class="mt-3">
+                    Chargement en cours...
+                    <div class="progress mt-2">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-width"
+                            role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                            aria-label="Loading progress"></div>
+                    </div>
+                    <div id="loading-step" class="mt-2"></div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="popup.js"></script>
+        <script type="module" src="updater.js"></script>
+    </body>
+</html>
