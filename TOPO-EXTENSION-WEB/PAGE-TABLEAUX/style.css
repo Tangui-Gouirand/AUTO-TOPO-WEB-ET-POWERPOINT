@@ -1,0 +1,780 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #FF7900;
+  --secondary-color: #999999;
+  --accent-color: #F16E00;
+  --text-color: #666666;
+  --background-color: #EEEEEE;
+  --border-color: #CCCCCC;
+  --primary-color-rgb: 255, 121, 0;
+  --pastel-green-color: #B8EBD6;
+  --pastel-yellow-color: #FFF6B6;
+  --pastel-red-color: #ffb6b6;
+  --green-color: #32C832;
+  --red-color: #CD3C14;
+  --yellow-color: #FFCC00;
+
+  --bs-chevron-icon: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 14'%3e%3cpath d='M9 2 7 0 0 7l7 7 2-2-5-5 5-5z'/%3e%3c/svg%3e);
+  --bs-close-icon: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='116 116 767 767' fill='%23000'%3e%3cpath d='M817.493 676.165a49.977 49.977 0 0 1 0 70.664l-70.664 70.664a49.977 49.977 0 0 1-70.664 0L499.5 640.828 322.835 817.493a49.977 49.977 0 0 1-70.664 0l-70.664-70.664a49.977 49.977 0 0 1 0-70.664L358.172 499.5 181.507 322.835a49.977 49.977 0 0 1 0-70.664l70.664-70.664a49.977 49.977 0 0 1 70.664 0L499.5 358.172l176.665-176.665a49.977 49.977 0 0 1 70.664 0l70.664 70.664a49.977 49.977 0 0 1 0 70.664L640.828 499.5Z'/%3e%3c/svg%3e);
+  --bs-check-icon: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 12'%3e%3cpath fill='%23000' d='M13 0 5 8 2 5 0 7l5 5L15 2z'/%3e%3c/svg%3e);
+  --bs-font-sans-serif: HelvNeueOrange, "Helvetica Neue", Helvetica, "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html, body, h1, h2, h3, p, ol, ul, li, figure, figcaption, blockquote, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #333;
+  background-color: #f7f7f754 !important;
+  padding: 1.5em;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.navigation-bar {
+  display: flex;
+  height: 4em;
+  background-color: #000000;
+}
+
+.navigation-fav {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 0.5em 0.75em;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  overflow-x: auto;
+  white-space: nowrap;
+  min-height: 2em;
+}
+
+.center-buttons {
+  display: flex;
+  margin-left: auto;
+  padding-right: 0.5em;
+}
+
+.logo-img{
+  position: relative;
+  left: 2em;
+  padding: 0.5em;
+}
+
+#tableContentContainer{
+  margin-top: 7em;
+}
+
+.infos-site-debit {
+  width: 70dvw;
+  margin: 1.5em auto;
+  padding: 1.5em;
+  background-color: #fff;
+  border-radius: 0.5em;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+  overflow-x: scroll;
+}
+
+.infos-site-debit::-webkit-scrollbar {
+  display: none;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 0 !important;
+}
+
+.nom_reseau {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1em !important;
+}
+
+.nom_reseau h1 {
+  margin: 0 !important;
+  text-transform: uppercase;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5em;
+  box-shadow: 0px 0 0.5em 2px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  overflow: hidden;
+  --bs-table-border-color: none !important;
+}
+
+.table th,
+.table td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table th {
+  background-color: #444;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.table td {
+  color: #444;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.table-sm th,
+.table-sm td {
+  padding: 0.5em 6px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0.5em rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+  background-color: #004080;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+#menu-btn,
+#config-btn {
+  padding: 0.4em;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  color: white;
+  border-style: none;
+}
+
+#menu-btn:hover,
+#config-btn:hover {
+  color: var(--accent-color);
+}
+
+/* AJOUT : Définition de l'animation pour l'apparition du symbole coché */
+@keyframes check-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.table th input[type="checkbox"],
+.table td input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+  vertical-align: middle;
+  display: inline-grid; /* Permet de centrer parfaitement le contenu */
+  place-content: center;
+}
+
+.table td input[type="checkbox"] {
+  border: 2px solid var(--primary-color);
+  transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.table th input[type="checkbox"] {
+  border: 2px solid var(--text-color);
+}
+
+
+.table td input[type="checkbox"]::before {
+  content: '';
+  width: 0.8em;
+  height: 0.8em;
+  transform: scale(0);
+  transition: transform 0.1s ease-in-out;
+  background-color: #000;
+  -webkit-mask-image: var(--bs-check-icon);
+  mask-image: var(--bs-check-icon);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.table td input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.table td input[type="checkbox"]:checked::before {
+  animation: check-pop 0.3s ease-out forwards;
+}
+
+.table td input[type="checkbox"]:hover {
+  border-color: var(--accent-color);
+}
+
+.table td input[type="checkbox"]:focus {
+  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.5);
+  border-color: var(--primary-color);
+}
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 50%);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menu,
+.GestionConfig {
+  display: none;
+  gap: 10px;
+  padding: 3em 10px 10px 10px;
+  border-radius: 0.4em;
+  box-shadow: 0px 0px 19px 4px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  position: relative;
+  background-color: var(--secondary-color);
+}
+
+.menu h2,
+.GestionConfig h2 {
+  color: white;
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 1.2em;
+    height: 1.2em;
+    font-size: 1.2em;
+    background-color: var(--background-color);
+    background-image: var(--bs-close-icon);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 8;
+}
+
+.menu div:not(.close-button) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.menu input[type="checkbox"] {
+  display: none;
+}
+
+.menu label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu div:has(#resiliationCheckbox:not(:checked)),
+.menu div:has(#annulationCheckbox:not(:checked)),
+.menu div:has(#carnetCheckbox:not(:checked)) {
+ box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 4px 0px inset;
+}
+
+.menu div:has(#resiliationCheckbox:checked),
+.menu div:has(#annulationCheckbox:checked),
+.menu div:has(#carnetCheckbox:checked) {
+ box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+tr.RESILIATION td,
+.menu div:has(#resiliationCheckbox) {
+  background-color: var(--pastel-red-color);
+}
+
+tr.ANNULATION td,
+.ANNULE,
+.menu div:has(#annulationCheckbox) {
+  background-color: var(--pastel-yellow-color);
+}
+
+tr.CARNET td,
+.menu div:has(#carnetCheckbox) {
+  background-color: var(--pastel-green-color) !important;
+}
+
+.menu div:has(#resiliationCheckbox:checked) {
+  background-color: var(--red-color) !important;
+  color: white;
+}
+
+.menu div:has(#annulationCheckbox:checked) {
+  background-color: var(--yellow-color) !important;
+  color: black;
+}
+
+.menu div:has(#carnetCheckbox:checked) {
+  background-color: var(--green-color) !important;
+  color: white;
+}
+
+.menu div:not(.close-button):hover {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.menu div:not(.close-button):active {
+  background-color: #e0e0e0 !important;
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.ExTabForExport {
+  border: 3px solid var(--primary-color);
+  background-color: black;
+  padding: 10px;
+  border-radius: 0.5em;
+  width: 100%;
+  margin-bottom: 0.25em;
+}
+
+.ExTabForExport .header {
+  background-color: var(--primary-color);
+  color: black;
+  text-align: center;
+  padding: 0.5em;
+  font-weight: bold;
+  border-radius: 0.3em;
+  margin-bottom: 5px;
+}
+
+.ExTabForExport .count {
+  background-color: black;
+  color: var(--primary-color);
+  text-align: center;
+  padding: 0.5em;
+  font-size: 1.2em;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.3em;
+}
+
+.ExTabForExport .row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  color: black;
+  padding: 0.2em 0;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.ExTabForExport .row > * {
+  width: auto !important;
+}
+
+.ExTabForExport .label {
+  text-align: center;
+  padding: 0.2em;
+  border-radius: 0.3em;
+  min-width: 58%;
+  background-color: lightblue;
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ExTabForExport .info-right {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  margin-left: 0.2em !important;
+  padding: 0 !important;
+  min-width: 40%;
+}
+
+.ExTabForExport .info-right > div {
+  background-color: lightblue;
+  padding: 0.5em;
+  text-align: center;
+  border-radius: 0.3em;
+  font-size: 0.7em;
+}
+
+.TabMode1, .TabMode2 {
+  margin: 0.5em 0 !important;
+}
+
+.TabMode2 {
+  display: none;
+}
+
+.ParametrepourExportTab label{
+  color: #000;
+}
+
+.infos-site-debit h2 input[type="checkbox"].select-all {
+  display: none;
+}
+
+.infos-site-debit h2:not(.temp-checked-h2) label {
+  background-image: linear-gradient( transparent calc(65% - 5px), var(--primary-color) 5px);
+  background-size: 0%;
+  background-repeat: no-repeat;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.infos-site-debit h2:not(.temp-checked-h2) label:hover,
+.infos-site-debit h2:not(.temp-checked-h2) input:checked+label {
+  background-image: linear-gradient(transparent calc(65% - 5px), darken(#000, 15%) 5px);
+  background-size: 100%;
+}
+
+.infos-site-debit h2.temp-checked-h2 label {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 50%, var(--primary-color) 50%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+
+.editable-cell {
+  position: relative;
+  cursor: pointer;
+} 
+
+.editable-cell input[type="text"],
+.editable-cell select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
+}
+
+.editable-cell input[type="text"]:focus,
+.editable-cell select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.fa-star, .fa-refresh {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, -webkit-text-stroke-color 0.3s ease-in-out, transform 0.5s ease-out;
+}
+
+.fa-refresh {
+    margin-right: 0.5em;
+}
+
+.fa-solid.fa-star {
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--text-color);
+}
+
+.fa-refresh:hover {
+    color: var(--green-color);
+    animation: spin 0.5s linear;
+}
+
+.fa-solid.fa-star:hover {
+    color: var(--primary-color);
+    -webkit-text-stroke-color: var(--primary-color);
+}
+
+.fa-solid.fa-star.checked {
+    color: var(--primary-color);
+    -webkit-text-stroke-color: var(--primary-color);
+}
+
+.fa-solid.fa-star.checked:hover {
+    color: var(--text-color);
+    -webkit-text-stroke-color: var(--text-color);
+}
+
+.navigation-fav .favorite-link {
+    color: var(--primary-color);
+    background-color: #ffffff;
+    border: 1px solid var(--primary-color);
+    text-decoration: none;
+    padding: 0.4em 0.8em;
+    transition: all 0.2s ease-in-out;
+    margin-right: 0.5em;
+    border-radius: 2em;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.navigation-fav .favorite-link:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navigation-fav .favorite-link.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    pointer-events: none;
+}
+
+.no-favorites-message {
+    color: #6c757d;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.favorite-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5em;
+}
+
+.glitter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    animation: glitter-explosion 0.7s ease-out forwards;
+}
+
+.hidden, .tdinvisible {
+  display: none !important;
+}
+
+.forced {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.sortable {
+  cursor: pointer;
+}
+
+.sortable:hover {
+  color: var(--accent-color);  
+}
+
+.sort-indicator {
+  margin-left: 5px;
+  font-size: 0.9em;
+}
+
+th.sortable:has(.sort-indicator.trier) {
+  font-weight: bold;
+}
+
+#loading-message {
+    display: none;
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.sectionppt{
+  display: none;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}
+
+@keyframes glitter-explosion {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(var(--x) - 50%), calc(var(--y) - 50%)) scale(0);
+    }
+}
+
+@keyframes star-bump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.fa-star.bumping {
+  animation: star-bump 0.3s ease-out;
+}
+
+@media screen and (min-width: 1023px) {
+  .nom_reseau {
+    width: 70dvw;
+    margin: 1.5em auto;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .infos-site-debit {
+    width: auto;
+    margin: 1.5em auto;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .table-sm th,
+  .table-sm td {
+    padding: 6px 4px;
+  }
+
+  .btn {
+    padding: 0.5em 12px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .table {
+    overflow-x: auto;
+  }
+}
+
+.refresh-row-btn {
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    display: block;
+}
+
+.refresh-row-btn:hover {
+    color: var(--green-color);
+    transform: scale(1.2);
+}
+
+@keyframes highlight-and-fade {
+  0% {
+    background-color: var(--accent-color);
+  }
+  80% {
+    background-color: var(--accent-color);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.row-refreshed td {
+  animation: highlight-and-fade 1.5s ease-out forwards;
+}
+
+table tbody tr:not(.row-refreshed).PARC td {
+    background-color: transparent !important;
+}
+
+
+.listeheader th {
+  font-weight: bold;
+}
+.menu .btn.REFSATIN {
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 4px 0px inset;
+    background-color: var(--border-color);
+    color: #333;
+    border: none;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu .btn.REFSATIN.active {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: var(--text-color) !important;
+    color: white;
+    transform: translateY(-1px);
+}
